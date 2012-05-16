@@ -7,6 +7,8 @@ ActionMailer::Base.smtp_settings = {
   :user_name            => CONFIG[:smtp_username],
   :password             => CONFIG[:smtp_password]
 }
-
 ActionMailer::Base.default_url_options[:host] = CONFIG[:host]
-Mail.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
+
+if Rails.env.development?
+  Mail.register_interceptor(DevelopmentMailInterceptor)
+end

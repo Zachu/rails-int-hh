@@ -1,0 +1,35 @@
+<h1><%= @user.name %></h1>
+
+<div class="row">
+  <div class="span7">    
+    <div class="row book-meta">
+
+      <div class="span2">
+        <% if @user.image %>
+          <%= image_tag(@user.image) %>
+        <% else %>
+          <%= image_tag('avatar.jpg') %>
+        <% end %>
+      </div>
+
+      <div class="span5">
+        <p>Email: <%= @user.email %></p>
+        <p>Phone: <%= @user.phone %></p>
+        <p>Address: <%= @user.address %></p>
+      </div>
+
+    </div>
+   
+    
+    <p><%= @user.description %></p>
+
+    <%= link_to "Edit", edit_user_path(@user), class: 'btn' if @user == @current_user %>
+
+  </div>
+</div>
+  
+
+
+<p>
+  <%= link_to "Back to user list", users_path %>
+</p>

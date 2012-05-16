@@ -9,6 +9,12 @@
         <ul class="nav">
           <% if current_user %>
             <li>
+              <%= link_to "Users", users_path %>
+            </li>
+            <li>
+              <%= link_to "My Profile", user_path(@current_user) %>
+            </li>
+            <li>
               <%= link_to "Log out", session_path, method: :delete %>
             </li>
           <% else %>

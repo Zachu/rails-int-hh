@@ -1,0 +1,117 @@
+<%= form_for @user, html: { class: 'form-horizontal' } do |f| %>
+
+  <% unless @user.errors.empty? %>
+    <div class='alert alert-block alert-error'>
+      <h2 class='alert-heading'>Failed to update user</h2>
+      <% @user.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <div class='control-group'>
+      <label class='control-label' for="firstname">Firstname</label>
+      <div class='controls'>
+        <%= f.text_field :firstname %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class='control-group'>
+      <label class='control-label' for="lastname">Lastname</label>
+      <div class='controls'>
+        <%= f.text_field :lastname %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class='control-group'>
+      <label class='control-label' for="email">Email</label>
+      <div class='controls'>
+        <%= f.text_field :email %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class='control-group'>
+      <label class='control-label' for="phone">Phone</label>
+      <div class='controls'>
+        <%= f.text_field :phone %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class='control-group'>
+      <label class='control-label' for="address">Address</label>
+      <div class='controls'>
+        <%= f.text_field :address %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class='control-group'>
+      <label class='control-label' for="description">Description</label>
+      <div class='controls'>
+        <%= f.text_area :description %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class='control-group'>
+      <label class='control-label' for="image">Image URL</label>
+      <div class='controls'>
+        <%= f.text_field :image %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class='control-group'>
+      <label class='control-label' for="locale">Locale</label>
+      <div class='controls'>
+        <%= f.select :locale, options_for_select(available_locales, @user.locale) %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class='control-group'>
+      <label class='control-label' for='password'>New password:</label>
+      <div class="controls">
+        <%= f.password_field :password %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class='control-group'>
+      <label class='control-label' for='password_confirmation'>New password confirmation:</label>
+      <div class="controls">
+        <%= f.password_field :password_confirmation %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div class='controls'>
+      <%= f.submit "Save", class: 'btn-primary', method: :put %>
+    </div>
+  </fieldset>
+
+<% end %>
+
+
+
+
+
+
+
+  
+

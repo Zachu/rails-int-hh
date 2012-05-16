@@ -1,0 +1,8 @@
+<h2>Users</h2>
+<dl>
+  <% @users.each do |user| %>
+    <dt><%= link_to user.name, user_path(user) %></dt>
+    <dd><%= user.email %></dd>
+  <% end %>
+</dl>
+
